@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { NativeRouter } from 'react-router-native';
 import { StyleSheet, Text, View } from 'react-native';
-
+import theme from './src/theme';
 import Main from './src/components/Main';
 
 const styles = StyleSheet.create({
@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
+
   });
 
 const App = () => {

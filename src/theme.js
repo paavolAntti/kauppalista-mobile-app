@@ -5,10 +5,11 @@ const theme = {
 		textPrimary: '#24292e',
 		textSecondary: '#d2dae2',
 		primary: '#0366d6',
-		tabBar: '#05c46b',
+		tabBar: '#4a6572',
 		tabBarText: '#FFFFFF',
-		accent: '#34e7e4',
-		error: '#FF0000'
+		accent: '#f2f2f2',
+		error: '#FF0000',
+		listEntry: '#fedbd0',
     },
     fontSizes: {
 		body: 14,

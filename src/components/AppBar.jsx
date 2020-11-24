@@ -4,17 +4,17 @@ import { Link } from 'react-router-native';
 import Constants from 'expo-constants';
 import AppBarTab from './AppBarTab';
 import theme from '../theme';
-
 const styles = StyleSheet.create({
+	
   container: {
-    paddingTop: Constants.statusBarHeight,
-    paddingBottom: Constants.statusBarHeight,
+    height: Constants.statusBarHeight*3,
     paddingLeft: 10,
     paddingRight:10,
     display: 'flex',
     backgroundColor: theme.colors.tabBar,
     flexDirection: 'column',
-    justifyContent: 'center',
+	justifyContent: 'center',
+	alignItems: 'center',
     marginBottom: 20,
   },
     text: {
@@ -30,7 +30,7 @@ const AppBar = () => {
 				<TouchableWithoutFeedback>
 					<Link to="/">
 						<AppBarTab
-							tabName={"Shops"}
+							tabName={"SHOPS"}
 							style={styles}
 						/>
 					</Link>
@@ -38,7 +38,7 @@ const AppBar = () => {
                 <TouchableWithoutFeedback>
 					<Link to="/newlist">
 						<AppBarTab
-							tabName={"New List"}
+							tabName={"NEW LIST"}
 							style={styles}
 						/>
 					</Link>
@@ -46,7 +46,7 @@ const AppBar = () => {
 				<TouchableWithoutFeedback>
 					<Link to="/login">
 						<AppBarTab
-							tabName={"Sign In"}
+							tabName={"SIGN IN"}
 							style={styles}
 						/>
 					</Link>

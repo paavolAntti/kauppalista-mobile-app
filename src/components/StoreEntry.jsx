@@ -6,10 +6,12 @@ import Text from './Text';
 
 const styles = StyleSheet.create({
     container: {
+        height: 50,
         display: "flex",
         flexDirection: "column",
-        margin: 10,
-        justifyContent:"center"
+        justifyContent:"center",
+        backgroundColor: theme.colors.accent,
+        borderRadius: 4
     },
     dataContainer: {
         flexDirection:"row",
@@ -21,16 +23,16 @@ const styles = StyleSheet.create({
 
 const StoreEntry = ({ name, itemCount, storeID }) => {
     return (
-        <View style={styles.container}>
-            <View style={styles.dataContainer}>
-                <TouchableWithoutFeedback>
-                    <Link to={`/data/${storeID}`}>
-                        <Text fontWeight='bold'>{name}</Text>
-                    </Link>
-                </TouchableWithoutFeedback>
-                <Text>items in list: {itemCount}</Text>
+        <TouchableWithoutFeedback>
+            <Link to={`/data/${storeID}`}>
+            <View style={styles.container}>
+                <View style={styles.dataContainer}>
+                    <Text fontWeight='bold'>{name}</Text>
+                    <Text>items in list: {itemCount}</Text>
+                </View>
             </View>
-        </View>
+            </Link>
+        </TouchableWithoutFeedback>
     );
 };
 export default StoreEntry;

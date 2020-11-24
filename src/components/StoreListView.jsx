@@ -4,80 +4,36 @@ import StoreEntry from './StoreEntry';
 import theme from '../theme';
 import Text from './Text';
 
-const stores = [
-	{
-		storeID: 0,
-		name: 'prisma',
-		items: [
-			{
-				item: 'kahvi',
-				amount: 2
-			},
-			{
-				item: 'banaani',
-				amount: 5
-			},
-			{
-				item: 'selluloosa',
-				amount: 100
-			},
-			
-		]
-	},
-	{
-		storeID: 1,
-		name: 'k-rauta',
-		items: [
-			{
-				item: 'laasti',
-				amount: 10
-			},
-			{
-				item: 'tiilet',
-				amount: 500
-			},
-			
 
-		]
-	},
-	{
-		storeID: 2,
-		name: 'lidl',
-		items: [
-			{
-				item: 'nobelaner',
-				amount: 24
-			}
-		]
-	},
-];
 
 const styles = StyleSheet.create({
   separator: {
-	height: 5,
+	height: 10,
 	
-    backgroundColor: theme.colors.accent
+    backgroundColor: theme.colors.tabBarText
   },
 });
 
 const ItemSeparator = () => <View style={styles.separator} />;
 
-const StoreListView = () => {
+const StoreListView = ({stores}) => {
 	return (
 		<View>
-			<View style={{alignSelf: 'center'}}>
-				<Text fontSize='subheading' fontWeight='bold'> All users lists</Text>
+			<View style={{alignSelf: 'center', marginBottom: 5}}>
+				<Text fontSize='subheading' fontWeight='bold'> TESTUSER LISTS</Text>
 			</View>
 			<FlatList
 				data={stores}
 				ItemSeparatorComponent={ItemSeparator}
-				renderItem={({ item }) => (
+				renderItem={({ item, index }) => (
 					<StoreEntry
+						key={item.storeID}
 						name={item.name}
 						itemCount={item.items.length}
 						storeID={item.storeID}
 					/>
 				)}
+				keyExtractor={(item, index) => index.toString()}
 			/>
 		</View>
 	);

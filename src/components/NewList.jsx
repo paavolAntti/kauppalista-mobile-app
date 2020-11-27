@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import { Formik } from 'formik';
 import FormikTextInput from './FormikTextInput';
 import Text from './Text';
+import AddItemForm from './AddItemForm';
 
 const validationSchema = yup.object().shape({
     shop: yup.string()
@@ -38,26 +39,12 @@ const NewListForm = ({onSubmit}) => {
         </View>
     );
 };
-const AddItemForm = ({onAdd}) => {
-    return (
-        <View>
-            <FormikTextInput name="item" placeholder="Item's name"/>
-            <FormikTextInput name="amount" placeholder="Amount of current item" />
-                <View style={styles.buttonContainer}>
-                    <Button
-                        title="Add item"
-                        onPress={onAdd}
-                    />
-                </View>
-        </View>
-    );
-};
 
 const NewList = ({ shopList }) => {
     const onSubmit = (values) => {
         console.log(values);
         console.log(itemslist);
-        const newID = shopList[shopList.length -1].storeID;
+        const newID = (shopList[shopList.length -1].storeID)+1;
         const newShop = {
                 storeID: newID,
                 name: values.shop,

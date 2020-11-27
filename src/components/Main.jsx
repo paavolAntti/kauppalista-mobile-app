@@ -6,11 +6,12 @@ import AppBar from './AppBar';
 import StoreListView from './StoreListView';
 import SignIn from './SignIn';
 import NewList from './NewList';
+import Store from './Store';
 import theme from '../theme';
 
 let stores = [
 	{
-		storeID: 0,
+		storeID: '0',
 		name: 'prisma',
 		items: [
 			{
@@ -29,7 +30,7 @@ let stores = [
 		]
 	},
 	{
-		storeID: 1,
+		storeID: '1',
 		name: 'k-rauta',
 		items: [
 			{
@@ -45,7 +46,7 @@ let stores = [
 		]
 	},
 	{
-		storeID: 2,
+		storeID: '2',
 		name: 'lidl',
 		items: [
 			{
@@ -81,7 +82,7 @@ const Main = () => {
                     <SignIn/>
                 </Route>
                 <Route path='/data/:id' exact>
-                    <Text> Tähän tulee parametrien mukainen kauppa</Text>
+                    <Store stores={stores}/>
                 </Route>
                 <Redirect to='/'/>
             </Switch>
